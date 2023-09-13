@@ -5,6 +5,7 @@
     /*PRIMARY COLORS*/
     --paleBlue: hsl(225, 100%, 94%);
     --brightBlue: hsl(245, 75%, 52%);
+    --brightBlueHover: hsl(245, 86%, 67%);
 
     /*NEUTRAL COLORS*/
     --veryPaleBlue: hsl(225, 100%, 98%);
@@ -39,7 +40,9 @@ body{
     gap: 1rem;
     height: 100vh;
     font-family: 'Red Hat Display', sans-serif;
-    background-color: var(--paleBlue);
+    background-image: url(/images/pattern-background-mobile.svg);
+    background-repeat: no-repeat;
+    background-size:contain;
 }
 
 .Card{
@@ -123,6 +126,11 @@ body{
     flex-direction: column;
 }
 
+.Card,
+.Btn-callToAction{
+    box-shadow: 0px 10px 10px var(--paleBlue);
+}
+
 .Btn{
     border: none;
     border-radius: .5rem;
@@ -138,6 +146,37 @@ body{
     &.Btn-cancelOrder{
         background-color: var(--white);
         color: var(--desaturatedBlue);
+    }
+}
+
+.attribution{
+    font-size: var(--step--2);
+}
+
+@media screen and (min-width:420px) {
+    body{
+        background-image: url(/images/pattern-background-desktop.svg);
+        background-size: contain;
+    }
+
+    .ChangeOption:hover{
+        color: var(--brightBlueHover);
+    }
+
+    .Btn{
+        cursor: pointer;
+
+        &.Btn-callToAction{
+            &:hover{
+                background-color: var(--brightBlueHover);
+            }
+        }
+
+        &.Btn-cancelOrder{
+            &:hover{
+                color: var(--darkBlue);
+            }
+        }   
     }
 }
 
